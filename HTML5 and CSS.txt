@@ -1,0 +1,651 @@
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
+Different ways to set CSS style:
+
+Inline Method:
+-------------------------------------------------
+<tagname style="property:value; property:value;">
+-------------------------------------------------
+
+<h2 style="color:red; font-size:300%;">
+
+------------
+    OR
+------------
+
+<style>
+  h2 {
+    color: blue;
+  }
+</style>
+
+------------
+    OR
+------------
+
+Class Method:
+<style>
+  .red-text{
+    color: red;
+    font-size: 16px;
+    font-family: Monospace;
+  }
+</style>
+<h2 class="red-text">CatPhotoApp</h2>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Downloading font from google:
+
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<style>
+  h2 {
+    font-family: Lobster;
+  }
+</style>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Specify How Fonts Should Degrade:
+
+For example, if you wanted an element to use the Helvetica font,
+but also degrade to the Sans-Serif font when Helvetica wasn't available,
+you could use this CSS style:
+
+p {
+  font-family: Helvetica, Sans-Serif;
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Add Images to your Website:
+
+All img elements must have an alt attribute. The text inside an alt attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
+
+<img src="https://bit.ly/fcc-relaxing-cat" alt="Relaxing cat">
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Size your Images:
+
+CSS has a property called width that controls an element's width. Just like with fonts, we'll use px (pixels) to specify the image's width.
+
+<style>
+ .smaller-image {
+    width: 100px
+  }
+</style>
+
+<img  class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back. ">
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Add Borders Around your Elements:
+
+CSS borders have properties like style, color and width.
+Remember that you can apply multiple classes to an element by separating each class with a space within its class attribute. For example:
+
+---------------------------
+<img class="class1 class2">
+---------------------------
+
+
+<style>
+.thick-green-border{
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;  
+    border-radius: 10px;  // Add Rounded Corners with a Border Radius.
+    border-radius: 100%;  // Circular Images with a Border Radius using a percentage.
+  }
+</style>
+
+<img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back. ">
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Anchor Elements:
+
+'a' elements, also known as anchor elements, are used to link to content outside of the current page.
+
+<a href="http://freecodecamp.org"> link to Free Code Camp</a>
+
+Nest an Anchor Element within a Paragraph:
+
+<p>Here's a <a href="https://freecodecamp.org"> link to Free Code Camp</a> for you to follow.</p>
+
+Make Dead Links using the Hash Symbol:
+
+<p>Here's a <a href="#"> link to Free Code Camp</a> for you to follow.</p>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Turn an Image into a Link:
+
+You can make elements into links by nesting them within an a element.
+
+<a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera. "></a>
+
+You can use any URL instead of '#'.
+
+<a href="https://www.google.com"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back"></a>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Create a Bulleted Unordered List:
+
+HTML has a special element for creating unordered lists, or bullet point-style lists.
+Unordered lists start with a <ul> element. Then they contain some number of <li> elements.
+
+<ul>
+  <li>milk</li>
+  <li>cheese</li>
+</ul>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Create an Ordered List (Uses Numbers instead of Bullets as in Unordered List):
+
+HTML has a special element for creating ordered lists, or numbered-style lists.
+Ordered lists start with a <ol> element. Then they contain some number of <li> elements.
+
+<ol>
+  <li>Garfield</li>
+  <li>Sylvester</li>
+</ol>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Create a Text Field:
+
+<input type="text" placeholder="this is placeholder text">
+
+Note that input elements are self-closing.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Create a Form Element:
+
+You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your form element.
+
+--------------------------------------------------------------
+<form action="/url-where-you-want-to-submit-form-data"></form>
+--------------------------------------------------------------
+
+
+Add a Submit Button to a Form:
+
+Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's action attribute.
+
+------------------------------------------------------------
+<button type="submit">this button submits the form</button>
+------------------------------------------------------------
+
+
+<form action="/submit-cat-photo">
+  <input type="text" placeholder="cat photo URL">
+  <button type="submit">Submit</button>
+</form>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Use HTML5 to Require a Field:
+
+You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.
+
+For example, if you wanted to make a text input field required, you can just add the word required within your input element, you would use: 
+----------------------------
+<input type="text" required>
+----------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Create a Set of Radio Buttons (Single Input):
+
+You can use radio buttons for questions where you want the user to only give you one answer
+Radio buttons are a type of input.
+Each of your radio buttons should be nested within its own label element.
+All related radio buttons should have the same 'name' attribute.
+
+<label><input type="radio" name="indoor-outdoor"> Indoor</label>
+<label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Create a Set of Checkboxes (Multiple Inputs):
+
+Forms commonly use checkboxes for questions that may have more than one answer.
+Checkboxes are a type of input
+Each of your checkboxes should be nested within its own label element.
+All related checkbox inputs should have the same name attribute.
+
+<label><input type="checkbox" name="personality"> Loving</label>
+<label><input type="checkbox" name="personality"> Pleasing</label>
+<label><input type="checkbox" name="personality"> Caring</label>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Check Radio Buttons and Checkboxes by Default:
+
+You can set a checkbox or radio button to be checked by default using the checked attribute.
+To do this, just add the word "checked" to the inside of an input element. For example:
+
+<input type="radio" name="test-name" checked>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Line Break:  Use <br> tag. It is a self closed tag.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Nest Many Elements within a Single Div Element:
+
+The div element, also known as a division element, is a general purpose container for other elements.
+The div element is probably the most commonly used HTML element of all.
+It's useful for passing the CSS of its own class declarations down to all the elements that it contains.
+
+<style>
+.green-background {
+  background-color: green;
+}
+</style>
+
+<div class="green-background">
+<input type="text">
+</div>
+
+--------------------------------------------------------------------------------------------------------------------------
+Set the ID of an Element:
+
+In addition to classes, each HTML element can also have an id attribute.
+id attributes should be unique. Browsers won't enforce this, but it is a widely agreed upon best practice.
+So please don't give more than one element the same id attribute.
+
+<input id="text-view" type="text">
+
+Use an ID Attribute to Style an Element:
+
+One cool thing about id attributes is that, like classes, you can style them using CSS.
+Here's an example of how you can take your element with the id attribute of cat-photo-element and give it the background color of green. In your style element:
+
+    #text-view {
+      background-color: green;
+    }
+
+Note that inside your style element, you always reference classes by putting a '.' in front of their names.
+You always reference ids by putting a '#' in front of their names.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Three important properties control the space that surrounds each HTML element: padding, margin, and border.
+
+Adjust the Margin of an Element:
+An element's margin controls the amount of space between an element's border and surrounding elements.
+If you set an element's margin to a negative value, the element will grow larger.
+
+Adjusting the Padding of an Element:
+An element's padding controls the amount of space between the element and its border.
+
+
+<style>
+.box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+.yellow-box {
+    background-color: yellow;
+    padding: 10px;
+  }
+.green-box {
+    background-color: green;
+    padding: 20px; // distance between text and border
+    margin: 20px;  // distance between border and other surrounding elements
+    margin: -20px; // the element will grow 20px larger than intended.
+  }
+.red-box {
+    background-color: red;
+    padding-top: 40px;  // individual padding for each side
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    margin-top: 40px;  // individual margin for each side
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+  }
+</style>
+<div class="box yellow-box">
+<h2 class="box green-box">padding</h5>
+<h2 class="box green-box">padding</h5>
+</div>
+
+
+Use Clockwise Notation to Specify the Padding and Margin of an Element:
+
+Instead of specifying an element's padding-top, padding-right, padding-bottom, and padding-left properties, you can specify them all in one line, like this:
+
+-----------------------------
+padding: 10px 20px 10px 20px;
+-----------------------------
+margin: 10px 20px 10px 20px;
+-----------------------------
+
+These four values work like a clock: top, right, bottom, left, and will produce the exact same result as using the side-specific padding instructions.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Prioritize One Style Over Another:
+
+Sometimes your HTML elements will receive multiple styles that conflict with one another.
+
+For example, your h1 element can't be both green and pink at the same time.
+
+Let's see what happens when we create a class that makes text pink, then apply it to an element. Will our class override the body element's color: green; CSS property?
+
+Create a CSS class called pink-text that gives an element the color pink.
+
+Give your h1 element the class of pink-text. See, the h1 element text is displayed in Pink rather than Green color!
+
+<style>
+  .pink-text{
+    color: pink;
+  }
+  body {
+    background-color: black;
+    font-family: Monospace;
+    color: green;
+  }
+</style>
+<body>
+<h1 class="pink-text">Hello World!</h1>
+</body>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Override Styles in Subsequent CSS:
+
+Our "pink-text" class overrode our body element's CSS declaration!
+
+We just proved that our classes will override the body element's CSS. So the next logical question is, what can we do to override our pink-text class?
+
+Create an additional CSS class called blue-text that gives an element the color blue. Make sure it's below your pink-text class declaration.
+
+Apply the blue-text class to your h1 element in addition to your pink-text class, and let's see which one wins.
+
+Applying multiple class attributes to a HTML element is done with a space between them like this:
+
+----------------------
+class="class1 class2"
+----------------------
+
+-------------------------------------------------------------------------------
+Note: It doesn't matter which order the classes are listed in the HTML element.
+-------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+However, the order of the class declarations in the <style> section are what is important.
+The second declaration will always take precedence over the first.
+Because .blue-text is declared second, it overrides the attributes of .pink-text
+-----------------------------------------------------------------------------------------
+
+<style>
+  body {
+    background-color: black;
+    font-family: Monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;  // as this is declared first, the color attribute will be overidden by blue-text class color attribute
+  }               // irrespective of its order in class declaration in h1 tag
+  .blue-text {
+    color: blue;  // as this is declared second, Hello World is blue irrespective of
+  }               // its order in class declaration in h1 tag
+</style>
+
+<h1 class="blue-text pink-text">Hello World!</h1>
+
+// even though pink-text is declared at last in class attribute,
+// the color of the text will be 'Blue' as blue-text class
+// declaration in style is after pink-text declaration.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Override Class Declarations by Styling ID Attributes:
+
+We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.
+
+But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?
+
+-------------------------------------------------------------------------------------
+Note: It doesn't matter whether you declare this css above or below pink-text class,
+since id attribute will always take precedence.
+-------------------------------------------------------------------------------------
+
+<style>
+  #orange-text {
+    color: orange;
+  }
+  body {
+    background-color: black;
+    font-family: Monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text">Hello World!</h1>
+// the color of the text will be orange
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Override Class Declarations with Inline Styles:
+
+So we've proven that id declarations override class declarations, regardless of where they are declared in your style element CSS.
+
+There are other ways that you can override CSS. Do you remember inline styles?
+
+
+<style>
+  body {
+    background-color: black;
+    font-family: Monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" style="color:white" class="pink-text blue-text">Hello World!</h1>
+// the color of the text will become 'White' as inline style has more preccedence than id or class
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Override All Other Styles by using Important:
+
+Yay! We just proved that in-line styles will override all the CSS declarations in your style element.
+
+But wait. There's one last way to override CSS. This is the most powerful method of all. But before we do it, let's talk about why you would ever want to override CSS.
+
+-------------------------------------------------------------------------------------------------
+In many situations, you will use CSS libraries. These may accidentally override your own CSS.
+So when you absolutely need to be sure that an element has specific CSS, you can use !important
+-------------------------------------------------------------------------------------------------
+
+
+Let's go all the way back to our pink-text class declaration. Remember that our pink-text class was overridden by subsequent class declarations, id declarations, and in-line styles.
+
+Let's add the keyword !important to your pink-text element's color declaration to make 100% sure that your h1 element will be pink.
+
+An example of how to do this is:
+
+----------------------
+color: red !important;
+----------------------
+
+---------------------------------------------------------------------------------------------------------------
+Note: if all or most of the color tags are marked !important then it will follow the general precedence order.
+---------------------------------------------------------------------------------------------------------------
+
+<style>
+  body {
+    background-color: black;
+    font-family: Monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink !important;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
+// the color will be 'Pink'
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Use Hex Code for Specific Colors:
+
+In CSS, we can use 6 hexadecimal digits to represent colors, two each for the red (R), green (G), and blue (B) components. For example, #000000 is black and is also the lowest possible value. 
+
+<style>
+  body {
+    background-color: #000000;
+  }
+</style>
+
+
+<style>
+  .red-text {
+    color: #FF0000;
+  }
+  .green-text {
+    color: #00FF00;
+  }
+  .dodger-blue-text {
+    color: #2998E4;
+  }
+  .orange-text {
+    color: #FFA500;
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="green-text">I am green!</h1>
+
+<h1 class="dodger-blue-text">I am dodger blue!</h1>
+
+<h1 class="orange-text">I am orange!</h1>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Use Abbreviated Hex Code:
+
+Many people feel overwhelmed by the possibilities of more than 16 million colors. And it's difficult to remember hex code. Fortunately, you can shorten it.
+
+For example, red's hex code #FF0000 can be shortened to #F00. This shortened form gives one digit for red, one digit for green, and one digit for blue.
+
+This reduces the total number of possible colors to around 4,000. But browsers will interpret #FF0000 and #F00 as exactly the same color.
+
+
+<style>
+  .red-text {
+    color: #F00;
+  }
+  .fuchsia-text {
+    color: #F0F;
+  }
+  .cyan-text {
+    color: #0FF;
+  }
+  .green-text {
+    color: #0F0;
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="fuchsia-text">I am fuchsia!</h1>
+
+<h1 class="cyan-text">I am cyan!</h1>
+
+<h1 class="green-text">I am green!</h1>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Use RGB values to Color Elements:
+
+Another way you can represent colors in CSS is by using RGB values.
+
+The RGB value for black looks like this:
+-------------
+rgb(0, 0, 0)
+-------------
+
+The RGB value for white looks like this:
+
+-------------------
+rgb(255, 255, 255)
+-------------------
+
+Instead of using six hexadecimal digits like you do with hex code, with RGB you specify the brightness of each color with a number between 0 and 255.
+
+If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So RGB, which starts counting from zero, has the exact same number of possible values as hex code.
+
+<style>
+  body {
+    background-color: rgb(0,255,0); // represents 'Green' color
+  }
+</style>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Use RGB to Mix Colors:
+
+Just like with hex code, you can mix colors in RGB by using combinations of different values.
+
+
+<style>
+  .red-text {
+    color: rgb(255,0,0);
+  }
+  .orchid-text {
+    color: rgb(218,112,214);
+  }
+  .sienna-text {
+    color: rgb(160, 82, 45));
+  }
+  .blue-text {
+    color: rgb(0,0,255);
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="orchid-text">I am orchid!</h1>
+
+<h1 class="sienna-text">I am sienna!</h1>
+
+<h1 class="blue-text">I am blue!</h1>
+
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
